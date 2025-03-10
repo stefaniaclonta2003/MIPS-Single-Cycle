@@ -1,69 +1,69 @@
-# MIPS Single Cycle
-
-# Descriere
+📝 Descriere
 
 Acest proiect implementează un procesor MIPS cu ciclu unic, incluzând principalele unități funcționale necesare pentru execuția instrucțiunilor. Proiectul a fost testat pe plăcuțele Nexys și Basys.
 
-# Arhitectură
+🏗️ Arhitectură
 
 Proiectul include următoarele unități funcționale:
 
-# Unitatea de extragere a instrucțiunilor (IFetch)
+🏹 Unitatea de extragere a instrucțiunilor (IFetch)
 
-# Unitatea de control (UC)
+🎛️ Unitatea de control (UC)
 
-# Unitatea de decodificare a instrucțiunilor (ID)
+🔍 Unitatea de decodificare a instrucțiunilor (ID)
 
-# Unitatea de execuție a instrucțiunilor (EX)
+⚙️ Unitatea de execuție a instrucțiunilor (EX)
 
-# Unitatea de memorie (MEM)
+💾 Unitatea de memorie (MEM)
 
-# Generatorul monopuls sincron (MPG)
+⏳ Generatorul monopuls sincron (MPG)
 
-# Afișorul pe 7 segmente (SSD)
+🔢 Afișorul pe 7 segmente (SSD)
 
-# Instrucțiuni Implementate
+⚠️ Nu există elemente nefuncționale.
 
-Instrucțiuni de tip Register
+💡 Instrucțiuni Implementate
 
-Shift Right Arithmetic (SRA)
+📌 Instrucțiuni de tip Register
 
-Descriere: Deplasează aritmetic spre dreapta un registru și stochează rezultatul într-altul.
+🔄 Shift Right Arithmetic (SRA)
 
-Sintaxă: sra $d, $t, h
+📜 Descriere: Deplasează aritmetic spre dreapta un registru și stochează rezultatul într-altul.
 
-Format RTL: $d <= $t >> h
+📌 Sintaxă: sra $d, $t, h
 
-Cod Mașină: 000000 00000 ttttt ddddd hhhhh 000011
+🖥️ Format RTL: $d <= $t >> h
 
-Bitwise eXclusive-OR (XOR)
+🔢 Cod Mașină: 000000 00000 ttttt ddddd hhhhh 000011
 
-Descriere: Realizează operația de sau-exclusiv între două registre și memorează rezultatul.
+✖️ Bitwise eXclusive-OR (XOR)
 
-Sintaxă: xor $d, $s, $t
+📜 Descriere: Realizează operația de sau-exclusiv între două registre și memorează rezultatul.
 
-Format RTL: $d <= $s ^ $t
+📌 Sintaxă: xor $d, $s, $t
 
-Cod Mașină: 000000 sssss ttttt ddddd 00000 100110
+🖥️ Format RTL: $d <= $s ^ $t
 
-Instrucțiuni de tip Immediate
+🔢 Cod Mașină: 000000 sssss ttttt ddddd 00000 100110
 
-BGEZ – Branch on Greater than or Equal to Zero
+📌 Instrucțiuni de tip Immediate
 
-Descriere: Execută un salt condiționat dacă registrul specificat este ≥ 0.
+🔀 BGEZ – Branch on Greater than or Equal to Zero
 
-Sintaxă: bgez $s, offset
+📜 Descriere: Execută un salt condiționat dacă registrul specificat este ≥ 0.
 
-Format RTL: if $s ≥ 0 then PC <= (PC + 4) + (SE(offset) << 2) else PC <= PC + 4;
+📌 Sintaxă: bgez $s, offset
 
-Cod Mașină: 000001 sssss 00000 oooooooooooooooo
+🖥️ Format RTL: if $s ≥ 0 then PC <= (PC + 4) + (SE(offset) << 2) else PC <= PC + 4;
 
-ORI – bitwise OR Immediate
+🔢 Cod Mașină: 000001 sssss 00000 oooooooooooooooo
 
-Descriere: Realizează operația logică SAU între un registru și o valoare imediată.
+🔗 ORI – bitwise OR Immediate
 
-Sintaxă: ori $t, $s, imm
+📜 Descriere: Realizează operația logică SAU între un registru și o valoare imediată.
 
-Format RTL: $t <= $s | ZE(imm)
+📌 Sintaxă: ori $t, $s, imm
 
-Cod Mașină: 001101 sssss ttttt iiiiiiiiiiiiiiii
+🖥️ Format RTL: $t <= $s | ZE(imm)
+
+🔢 Cod Mașină: 001101 sssss ttttt iiiiiiiiiiiiiiii
